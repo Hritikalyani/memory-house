@@ -1,0 +1,35 @@
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: Georgia, serif;
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0 30px;
+    line-height: 1.6;
+}
+
+h1{
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+h2{
+    font-weight: normal;
+    color: #b0b0b0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    color:#d4a574;
+}
+
+hr{
+    border: none;
+    border-top: 1px solid #3a3a3a;
+    margin: 40px 0;
+}
