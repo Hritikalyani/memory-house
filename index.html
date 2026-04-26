@@ -2,28 +2,21 @@
 <html lang="en">                                                     <!-- "<html>....<html>" this wraps the entire code. Usually the contents are written between these characters."-->
 <head>                                                               <!-- Information about the page that the user doesn't directly see. Example: The Page title etc.-->
     <meta charset="UTF-8">                                           <!--Tells the browser the file uses UTF-8 character encoding, which means it can display characters from any language including emoji. Always include this.-->
-    <title>Memory House</title>                                      <!--What appears on the browser tab. Not on the page itself.-->
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
+    <link rel="stylesheet" href="css/base.css">
 <head>
-<body>                                                               <!-- "<body>....</body" - Everything between these appears on the webpage. -->
-    <h1>Memory House</h1>                                            <!--Header you could see on the Web Page-->
-    <h2>Photographs, by the Hour.</h2>
-    <p>A Photography Portfolio organized by the Hours of the Day, by Hritik.</p> <!--Paragraph you could see on the Web Page-->
-    <hr>
-    <h2>The Hours</h2>
-    <ul>
-        <li>Morning</li>
-        <li>Afternoon</li>
-        <li>Evening</li>
-        <li>Night</li>
-    </ul>
-    <hr>
-
-    <h2>A sample frame</h2>
-    <img src="https://picsum.photos/600/400" alt="A Placeholder Photograph">
-
-    <hr>
-
-    <p>Built by Hritik. Source code on <a href="https://github.com/Hritikalyani/memory-house">Github</a></p>
+<body class="landing">
+    <div class="landing-image">
+        <img src="photos_web/landing.jpg" alt="A Figure walking through layered concrete frames.">
+    </div>
+    <div class="landing-overlay">
+        <h1>Memory House</h1>
+        <p class="tagline">Photographs, by the Hour.</p>
+        <a href="#" class="enter-link">Enter</a>
+    </div>
 </body>
 <html>
