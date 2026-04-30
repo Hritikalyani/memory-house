@@ -94,3 +94,81 @@ body{
     border-color: rgba(240, 232, 216, 0.9);
     letter-spacing: 0.4em;
 }
+
+
+/* ============================================================================
+   Mood pages — shared structure across all moods for the design of the things
+   ============================================================================ */
+
+body.mood {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.mood-gallery {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+.photo-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vh 4vw;
+    scroll-snap-align: center;
+}
+
+.photo-frame {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-frame img {
+    max-width: 100%;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+}
+
+.mood-nav {
+    position: fixed;
+    bottom: 3vh;
+    right: 3vw;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+.mood-label {
+    opacity: 0.5;
+    letter-spacing: 0.3em;
+}
