@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/moods.css">
+    <script src="js/mood-nav.js" defer></script>
 </head>
 <body class="mood evening">
     <main class="mood-gallery">
@@ -40,8 +41,15 @@
     </main>
     
     <nav class="mood-nav">
+        <ul class="mood-list">
+        <li><a href="morning.html">Morning</a></li>
+        <li><a href="afternoon.html">Afternoon</a></li>
+        <li><a href="night.html">Night</a></li>
+    </ul>
+    <div class="nav-bar">
         <a href="index.html" class="nav-link nav-home">⌂</a>
-        <span class="mood-label">Evening</span>
+        <button class="mood-label" aria-expanded="false">Evening ▴</button>
+    </div>
     </nav>
 </body>
 </html>
