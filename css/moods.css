@@ -6,3 +6,28 @@ body.night {
     background-color: #1a1d2a;
     color: #c8b890;
 }
+
+/* =============================================
+   Morning - Soft greens and warm haze
+   ============================================= */
+
+body.morning {
+    background-color: #d4c39a;
+    color: #3a352a;
+}
+
+/* ==============================================
+   Afternoon - sun-bleached tan and earth brown
+   ============================================== */
+body.afternoon {
+    background-color: #b89a6b;
+    color: #3a2a1a;
+}
+
+/* ==============================================
+   Afternoon - sun-bleached tan and earth brown
+   ============================================== */
+body.evening {
+    background-color: #4a2e3a;
+    color: #e8b87a;
+}
