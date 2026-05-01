@@ -32,6 +32,22 @@ body.evening {
     color: #e8b87a;
 }
 
+/* ==============================================
+   Dawn - peach over slate, the threshold of the day. 
+   ============================================== */
+body.dawn {
+    background-color: #e8c4a8;
+    color: #3a4a5a;
+}
+
+/* ==============================================
+   Dusk - cool fog with last warm light
+   ============================================== */
+body.dusk {
+    background-color: #6a7080;
+    color: #f0e0c8;
+}
+
 /* ===============================================
 Per-mood photo entrance tansitions
    ===============================================*/
@@ -83,4 +99,27 @@ body.night .photo-section .photo-frame {
 body.night .photo-section.in-view .photo-frame {
     opacity: 1;
     filter: brightness(1);
+}
+
+/* === Dawn: gentle wash through pink === */
+body.dawn .photo-section .photo-frame {
+    opacity: 0;
+    filter: hue-rotate(-10deg) brightness(1.1);
+}
+
+body.dawn .photo-section.in-view .photo-frame {
+    opacity: 1;
+    filter: hue-rotate(0deg) brightness(1);
+}
+
+/* === Dusk: slow cool drift === */
+body.dusk .photo-section .photo-frame {
+    opacity: 0;
+    filter: blur(2px);
+    transition: opacity 1.5s ease, filter 1.5s ease;
+}
+
+body.dusk .photo-section.in-view .photo-frame {
+    opacity: 1;
+    filter: blur(0);
 }

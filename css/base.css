@@ -213,6 +213,14 @@ body.mood {
     margin-bottom: 0.6rem;
 }
 
+.mood-list .unlock-only {
+    display: none;
+}
+
+.mood-list .unlock-only.revealed {
+    display: list-item;
+}
+
 .mood-list li:last-child {
     margin-bottom: 0;
 }

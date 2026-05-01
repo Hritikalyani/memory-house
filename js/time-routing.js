@@ -76,3 +76,61 @@ if (photoSections.length > 0) {
         window.addEventListener('load', startObserving);
     }
 }
+
+// ============================================
+// Dawn / Dusk discovery unlock
+// ============================================
+
+// Track which moods the visitor has seen
+const moodPages = ['morning', 'afternoon', 'evening', 'night'];
+const currentBodyClasses = document.body.classList;
+const currentMood = moodPages.find(mood => currentBodyClasses.contains(mood));
+
+if (currentMood) {
+    let visited = JSON.parse(localStorage.getItem('memoryHouseVisited') || '[]');
+    if (!visited.includes(currentMood)) {
+        visited.push(currentMood);
+        localStorage.setItem('memoryHouseVisited', JSON.stringify(visited));
+    }
+}
+
+// Check if all four primary moods have been visited
+function hasUnlockedExploration() {
+    const visited = JSON.parse(localStorage.getItem('memoryHouseVisited') || '[]');
+    return moodPages.every(mood => visited.includes(mood));
+}
+
+// Check if current time is in dawn or dusk window
+function getActiveTimeUnlock() {
+    const now = new Date();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const totalMinutes = hour * 60 + minute;
+    
+    // Dawn: 5:00 AM (300) to 6:30 AM (390)
+    if (totalMinutes >= 300 && totalMinutes < 390) {
+        return 'dawn';
+    }
+    // Dusk: 5:30 PM (1050) to 7:00 PM (1140)
+    if (totalMinutes >= 1050 && totalMinutes < 1140) {
+        return 'dusk';
+    }
+    return null;
+}
+
+// Reveal unlock-only items based on time and exploration
+const unlockItems = document.querySelectorAll('.unlock-only');
+const explored = hasUnlockedExploration();
+const activeUnlock = getActiveTimeUnlock();
+
+unlockItems.forEach(function(item) {
+    const link = item.querySelector('a');
+    if (!link) return;
+    
+    const targetMood = link.getAttribute('href').replace('.html', '');
+    
+    // Reveal if explored OR currently in the time window for this mood
+    if (explored || targetMood === activeUnlock) {
+        item.classList.add('revealed');
+    }
+});

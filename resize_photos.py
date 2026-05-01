@@ -1,5 +1,5 @@
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageOps
 
 INPUT_FOLDER = Path("photos")
 OUTPUT_FOLDER = Path("photos_web")
@@ -15,6 +15,7 @@ for photo_path in photo_files:
     print(f"Processing {photo_path.name}... ")
     
     image = Image.open(photo_path)
+    image = ImageOps.exif_transpose(image)
     width, height = image.size
     if width >= height:
         new_width = MAX_DIMENSION
