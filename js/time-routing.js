@@ -44,3 +44,35 @@ if (moodNav && moodLabel) {
         }
     });
 }
+
+// ==============================================
+// Photo entrance animations on scroll
+// ==============================================
+
+const photoSections = document.querySelectorAll('.photo-section');
+
+if (photoSections.length > 0) {
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    function startObserving() {
+        photoSections.forEach(function(section) {
+            observer.observe(section);
+        });
+    }
+    
+    if (document.readyState === 'complete') {
+        startObserving();
+    } else {
+        window.addEventListener('load', startObserving);
+    }
+}

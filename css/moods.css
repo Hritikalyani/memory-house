@@ -25,9 +25,62 @@ body.afternoon {
 }
 
 /* ==============================================
-   Afternoon - sun-bleached tan and earth brown
+   Evening - sun-bleached tan and earth brown
    ============================================== */
 body.evening {
     background-color: #4a2e3a;
     color: #e8b87a;
+}
+
+/* ===============================================
+Per-mood photo entrance tansitions
+   ===============================================*/
+
+/* Default state for all the frames before/after view */
+.photo-frame {
+    transition: opacity 1.2s ease, transform 1.2s ease, filter 1.2s ease;
+}
+
+/* === Morning: soft cross-fade through light === */
+body.morning .photo-section .photo-frame {
+    opacity: 0;
+    filter: brightness(1.4);
+}
+body.morning .photo-section.in-view .photo-frame {
+    opacity: 1;
+    filter: brightness(1);
+}
+
+/* === Afternoon: still scale-up, heat-haze stillness === */
+body.afternoon .photo-section .photo-frame {
+    opacity: 0;
+    transform: scale(1.02);
+}
+
+body.afternoon .photo-section.in-view .photo-frame {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* === Evening: warm fade with amber wash === */
+body.evening .photo-section .photo-frame {
+    opacity: 0;
+    filter: sepia(0.4) brightness(1.1);
+}
+
+body.evening .photo-section.in-view .photo-frame {
+    opacity: 1;
+    filter: sepia(0) brightness(1);
+}
+
+/* === Night: slow emergence from deep shadow === */
+body.night .photo-section .photo-frame {
+    opacity: 0;
+    filter: brightness(0.4);
+    transition: opacity 1.6s ease, filter 1.6s ease;
+}
+
+body.night .photo-section.in-view .photo-frame {
+    opacity: 1;
+    filter: brightness(1);
 }
